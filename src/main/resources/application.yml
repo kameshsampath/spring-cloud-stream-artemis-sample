@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    stream:
+      artemis:
+        binder:
+          transport: org.apache.activemq.artemis.core.remoting.impl.netty.NettyConnectorFactory
+          host: http://artemis-client
+          port: 61616
+      bindings:
+        output1:
+          destination: test1
+        output2:
+          destination: test2
+        input1:
+          destination: test1
+        input2:
+          destination: test2
